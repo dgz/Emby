@@ -22,12 +22,6 @@
             <param name="property">A property that will be notified for.</param>
             <param name="otherProperties">The properties that will be notified for.</param>
         </member>
-        <member name="T:PropertyChanged.ImplementPropertyChangedAttribute">
-            <summary>
-            Include a <see cref="T:System.Type"/> for notification.
-            The <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface is added to the type.
-            </summary>
-        </member>
         <member name="T:PropertyChanged.DependsOnAttribute">
             <summary>
             Injects this property to be notified when a dependent property is set.
@@ -51,9 +45,26 @@
             Exclude a <see cref="T:System.Type"/> or property from notification.
             </summary>
         </member>
+        <member name="T:PropertyChanged.DoNotCheckEqualityAttribute">
+            <summary>
+            Skip equality check before change notification
+            </summary>
+        </member>
         <member name="T:PropertyChanged.DoNotSetChangedAttribute">
             <summary>
             Exclude a <see cref="T:System.Type"/> or property from IsChanged flagging.
+            </summary>
+        </member>
+        <member name="T:PropertyChanged.ImplementPropertyChangedAttribute">
+            <summary>
+            Specifies that PropertyChanged Notification will be added to a class.
+            <para>
+            PropertyChanged.Fody will weave the <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> interface and implementation into the class.
+            When the value of a property changes, the PropertyChanged notification will be raised automatically
+            </para>
+            <para>
+            see https://github.com/Fody/PropertyChanged <see href="https://github.com/Fody/PropertyChanged">(link)</see> for more information.
+            </para>
             </summary>
         </member>
     </members>
